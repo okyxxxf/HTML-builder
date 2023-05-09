@@ -10,7 +10,7 @@ reader.then((files)=>{
       if (error) throw new Error(error);
       if(stats.isFile() == true){
         let fileNames = file.split('.');
-        stdout.write(`${fileNames[0]} - ${fileNames[1]} - ${stats.size * 0.000977}kb\n`);
+        stdout.write(`${fileNames[0]} - ${fileNames[fileNames.length - 1]} - ${stats.size * 0.000977}kb\n`);
       }
     });
   }
