@@ -34,14 +34,14 @@ const buildHtml = () => {
 };
 
 const mergeStyles = () => {
-  const writeStream = fs.createWriteStream(path.resolve(__dirname, 'project-dist', 'bundle.css'));
+  const writeStream = fs.createWriteStream(path.resolve(__dirname, 'project-dist', 'style.css'));
   const reader = fs.promises.readdir(path.resolve(__dirname, 'styles'));
 
   reader.then((styles) => {
     fs.promises.readdir(path.resolve(__dirname, 'project-dist'))
       .then((files) => {
-        if(files === 'bundle.css'){
-          fs.unlink(path.resolve(__dirname, 'project-dist', 'bundle.css'));
+        if(files === 'style.css'){
+          fs.unlink(path.resolve(__dirname, 'project-dist', 'style.css'));
         }
       }).then(() => {
         for(let style of styles){
